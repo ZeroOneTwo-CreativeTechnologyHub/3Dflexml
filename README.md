@@ -25,6 +25,8 @@
 - Python 3+ and necessary dependencies
 
 ### 2. Installation
+TBC
+<!--
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/3DFlexML.git
@@ -33,7 +35,7 @@ cd 3DFlexML
 # Install dependencies
 pip install -r requirements.txt
 ```
-
+-->
 ### 3. Printing & Building the Sensor
 1. **3D print your sensor** using the provided STL files in the `/hardware` folder.
 2. **Assemble and connect** the sensor to your chosen microcontroller.
@@ -74,8 +76,7 @@ This project is licensed under the **MIT Licence** - see the [LICENCE](LICENCE) 
 
 ## 📞 Contact & Community
 - GitHub Issues: [Report bugs & request features](https://github.com/yourusername/3DFlexML/issues)
-- Discord/Forum: *(Add community links if available)*
-- Twitter: [@YourTwitterHandle](https://twitter.com/yourtwitterhandle)
+
 
 ---
 
