@@ -60,13 +60,16 @@ pip install -r requirements.txt
 ---
 
 ## 🤝 Contributing
-We welcome contributions! If you'd like to improve 3DFlexML, follow these steps:
+We welcome contributions! If you'd like to improve 3DFlexML, check out the issues tab and see what the next steps of the project are!
+
+<!--
+follow these steps:
 1. **Fork the repository**
 2. **Create a new branch** (`git checkout -b feature-branch`)
 3. **Commit your changes** (`git commit -m "Add new feature"`)
 4. **Push to GitHub** (`git push origin feature-branch`)
 5. **Create a pull request**
-
+-->
 ---
 
 ## 📜 Licence
