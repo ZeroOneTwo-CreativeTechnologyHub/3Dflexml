@@ -78,6 +78,7 @@ This project is licensed under the **MIT Licence** - see the [LICENCE](LICENCE) 
 ---
 
 ## 📞 Contact & Community
+- Check out the [Discussions Tab](https://github.com/ZeroOneTwo-CreativeTechnologyHub/3Dflexml/discussions) to see what the 3DFlexML community are up to.
 - GitHub Issues: [Report bugs & request features](https://github.com/yourusername/3DFlexML/issues)
 
 
