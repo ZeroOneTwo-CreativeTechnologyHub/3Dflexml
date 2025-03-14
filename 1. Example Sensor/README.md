@@ -1,89 +1,55 @@
-# 3DFlexML: Adaptive, Intelligent, and Open
+# 1_Example_Sensor
 
-![3DFlexML Logo](https://your-image-url.com) *(Replace with actual image link)*
+## 📌 Overview
+This folder contains all necessary files to replicate the **Example Sensor**, a **3D-printed flexible sensor** designed for use with **TinyML**. This sensor demonstrates how **conductive TPU** and **machine learning** can work together to detect deformations such as bending, pressure, or stretching.
 
-**3DFlexML** is an open-source platform that integrates **3D-printed flexible conductive sensors** with **TinyML** to create adaptable, real-time sensing solutions. It enables users to print sensors in any form and train embedded machine learning models to interpret touch, bend, and pressure inputs, making it ideal for applications in **wearables, robotics, human-computer interaction, and industrial automation**.
-
----
-
-## 📌 Table of Contents
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## 🚀 Features
-
-- **Customisable 3D-printed sensors** – Print flexible conductive sensors tailored to your specific needs.
-- **Embedded TinyML intelligence** – Process sensor data in real-time with low-power, on-device machine learning.
-- **Versatile applications** – Suitable for wearables, smart textiles, robotics, and interactive surfaces.
-- **Open-source & extensible** – Modify, expand, and contribute to the development of 3DFlexML.
-- **Cross-platform compatibility** – Works with microcontrollers like Arduino, Raspberry Pi Pico, and ESP32.
-
----
+## 📂 Folder Structure
+```
+1_Example_Sensor/
+│── README.md               # This document
+│── hardware/               # 3D-printable files (STL, CAD)
+│── firmware/               # Code for Arduino/TinyML integration
+│── models/                 # Trained TinyML models
+│── data/                   # Collected sensor datasets
+│── tests/                  # Scripts for validation and testing
+```
 
 ## 🛠️ Getting Started
 
-To get started with 3DFlexML, follow these steps:
+### 🔹 Requirements
+- **3D Printer:** e.g., Bambu Labs P1S
+- **Conductive TPU Filament:** e.g., Recreus Conductive Filaflex Black, 1.75mm
+- **Microcontroller:** Arduino Nano 33 BLE Sense or compatible
+- **Software:**
+  - Arduino IDE
+  - Python 3.x (for data processing scripts)
+  - 3D modeling software (e.g., Fusion 360)
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/ZeroOneTwo-CreativeTechnologyHub/3Dflexml.git
-   ```
-2. **Install Required Software:**
-   - Arduino IDE
-   - Python 3.x (for data processing scripts)
-   - 3D modeling software (e.g., Fusion 360)
-3. **Refer to Sensor-Specific Setup:**
-   - Each sensor has its own folder with setup and usage instructions.
-   - See **[1_Example_Sensor/README.md](1_Example_Sensor/README.md)** for an example implementation.
+### 🔹 Installation & Usage
 
----
+1. **3D Print the Sensor:**
+   - Open the 3D model file from the `hardware/` directory.
+   - Slice the model using your preferred slicer software.
+   - Print using conductive TPU filament.
 
-## 📂 Project Structure
+2. **Set Up the Hardware:**
+   - Follow the wiring diagram in the `hardware/` directory to connect the sensor to the microcontroller.
 
-```
-3DFlexML/
-│
-├── README.md
-│   └── [This File]
-│
-├── CONTRIBUTING.md
-│
-└── 1_Example_Sensor/
-    │
-    ├── hardware/
-    │   ├── README.md
-    │   └── [Hardware design files and documentation]
-    │
-    ├── firmware/
-    │   ├── README.md
-    │   └── [Firmware source code and related files]
-    │
-    ├── models/
-    │   ├── README.md
-    │   └── [Pre-trained TinyML models]
-    │
-    ├── data/
-    │   ├── README.md
-    │   └── [Datasets for training and testing]
-    │
-    └── tests/
-        ├── README.md
-        └── [Testing scripts and results]
-```
+3. **Upload Firmware:**
+   - Open `example_sensor.ino` from the `firmware/` directory in Arduino IDE.
+   - Install required libraries (`Arduino_TensorFlowLite`, `Arduino_LSM9DS1`, etc.).
+   - Upload the sketch to the microcontroller.
 
----
+4. **Run the System:**
+   - Open the Serial Monitor in Arduino IDE.
+   - Interact with the sensor and observe real-time data and classifications.
 
-## 🤝 Contributing
-We welcome contributions to 3DFlexML! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
+### 🔬 Model Usage & Training
+- The **trained TinyML model** in `models/` classifies different bending patterns.
+- To **retrain the model**, follow the instructions in `models/training_notebook.ipynb`.
+- The dataset used for training is stored in `data/processed_data.csv`.
 
----
+## 📢 Contributing
+If you improve the design, feel free to submit an update via **Pull Request**! See **[CONTRIBUTING.md](../../CONTRIBUTING.md)** for details.
 
-## 📜 License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-🚀 **Start creating intelligent, flexible, and customisable sensing solutions with 3DFlexML today!**
+🚀 **Happy experimenting with 3DFlexML!**
