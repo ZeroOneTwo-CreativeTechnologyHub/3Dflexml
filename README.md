@@ -6,6 +6,17 @@
 
 ---
 
+## 📌 Table of Contents
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Applications](#applications)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact & Community](#contact-community)
+
+---
+
 ## 🚀 Features
 
 - **Customisable 3D-printed sensors** – Print flexible conductive sensors tailored to your specific needs.
@@ -16,40 +27,56 @@
 
 ---
 
-## 🔧 Getting Started
+## 🛠️ Getting Started
 
-### 1. Requirements
-- **3D printer** - I'm using a Bambu Labs P1S
-- **conductive TPU filament** - I suggest Recreus Conductive Filaflex Black, 1.75 mm
-- **Arduino Nano 33 BLE Sense**
-- TinyML framework (e.g., **TensorFlow Lite for Microcontrollers**, **Edge Impulse**)
-- Laptop with the latest Arduino IDE installed
-- Internet connection
+To get started with 3DFlexML, follow these steps:
 
-### 2. Installation
-TBC
-<!--
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/3DFlexML.git
-cd 3DFlexML
-
-# Install dependencies
-pip install -r requirements.txt
-```
--->
-### 3. Printing & Building the Sensor
-1. **3D print your sensor** using the provided STL files in the `/hardware` folder.
-2. **Assemble and connect** the sensor to your chosen microcontroller following the circuit diagram in '/hardware'.
-3. **Upload the TinyML model** to your board using the provided scripts.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/ZeroOneTwo-CreativeTechnologyHub/3Dflexml.git
+   ```
+2. **Install Required Software:**
+   - Arduino IDE
+   - Python 3.x (for data processing scripts)
+   - 3D modeling software (e.g., Fusion 360)
+3. **Refer to Sensor-Specific Setup:**
+   - Each sensor has its own folder with setup and usage instructions.
+   - See **[1_Example_Sensor/README.md](1_Example_Sensor/README.md)** for an example implementation.
 
 ---
 
-## 🧠 How It Works
-1. **Print a sensor** – Design and print a flexible conductive sensor using TPU filament.
-2. **Train a model** – Use TinyML to recognise patterns from sensor inputs (e.g., bending, pressure, motion).
-3. **Deploy to hardware** – Run the trained model on a microcontroller for real-time analysis.
-4. **Customise & expand** – Adapt the sensor’s form factor and AI model for different use cases.
+## 📂 Project Structure
+
+```
+3DFlexML/
+│
+├── README.md
+│   └── [This File]
+│
+├── CONTRIBUTING.md
+│
+└── 1_Example_Sensor/
+    │
+    ├── hardware/
+    │   ├── README.md
+    │   └── [Hardware design files and documentation]
+    │
+    ├── firmware/
+    │   ├── README.md
+    │   └── [Firmware source code and related files]
+    │
+    ├── models/
+    │   ├── README.md
+    │   └── [Pre-trained TinyML models]
+    │
+    ├── data/
+    │   ├── README.md
+    │   └── [Datasets for training and testing]
+    │
+    └── tests/
+        ├── README.md
+        └── [Testing scripts and results]
+```
 
 ---
 
@@ -62,20 +89,12 @@ pip install -r requirements.txt
 ---
 
 ## 🤝 Contributing
-We welcome contributions! If you'd like to improve 3DFlexML, check out the issues tab and see what the next steps of the project are!
+We welcome contributions to 3DFlexML! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
 
-<!--
-follow these steps:
-1. **Fork the repository**
-2. **Create a new branch** (`git checkout -b feature-branch`)
-3. **Commit your changes** (`git commit -m "Add new feature"`)
-4. **Push to GitHub** (`git push origin feature-branch`)
-5. **Create a pull request**
--->
 ---
 
-## 📜 Licence
-This project is licensed under the **MIT Licence** - see the [LICENCE](LICENCE) file for details.
+## 📜 License
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -86,4 +105,4 @@ This project is licensed under the **MIT Licence** - see the [LICENCE](LICENCE) 
 
 ---
 
-**🚀 Start creating intelligent, flexible, and customisable sensing solutions with 3DFlexML today!**
+🚀 **Start creating intelligent, flexible, and customisable sensing solutions with 3DFlexML today!**
