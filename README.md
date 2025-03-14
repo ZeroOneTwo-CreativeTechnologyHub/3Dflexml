@@ -19,10 +19,12 @@
 ## 🔧 Getting Started
 
 ### 1. Requirements
-- A 3D printer with **conductive TPU filament**
-- A compatible microcontroller (e.g., **Arduino Nano 33 BLE Sense**, **ESP32**, **Raspberry Pi Pico**)
+- **3D printer** - I'm using a Bambu Labs P1S
+- **conductive TPU filament** - I suggest Recreus Conductive Filaflex Black, 1.75 mm
+- **Arduino Nano 33 BLE Sense**
 - TinyML framework (e.g., **TensorFlow Lite for Microcontrollers**, **Edge Impulse**)
-- Python 3+ and necessary dependencies
+- Laptop with the latest Arduino IDE installed
+- Internet connection
 
 ### 2. Installation
 TBC
@@ -38,7 +40,7 @@ pip install -r requirements.txt
 -->
 ### 3. Printing & Building the Sensor
 1. **3D print your sensor** using the provided STL files in the `/hardware` folder.
-2. **Assemble and connect** the sensor to your chosen microcontroller.
+2. **Assemble and connect** the sensor to your chosen microcontroller following the circuit diagram in '/hardware'.
 3. **Upload the TinyML model** to your board using the provided scripts.
 
 ---
