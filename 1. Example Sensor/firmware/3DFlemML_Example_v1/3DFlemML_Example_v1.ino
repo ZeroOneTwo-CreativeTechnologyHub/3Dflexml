@@ -1,26 +1,57 @@
-#define SERIESRESISTOR 10000    // The value of the fixed resistor
-#define STRETCHPIN A0           // Analog pin connected to the stretch sensor
+#define SERIESRESISTOR 10000   // 10K resistor
+#define STRETCHPIN A0           // Pin connected to the stretch sensor
+
+String currentLabel = "none";   // Current action label
+bool recording = false;         // Recording state
+unsigned long startTime = 0;    // Starting time for consistent timestamps
 
 void setup() {
-  Serial.begin(115200);         // Faster baud rate for efficient data transfer
-  while (!Serial);
+  Serial.begin(9600);
+  Serial.println("timestamp,resistance,label");  // CSV header
 }
 
 void loop() {
-  // Get current timestamp in milliseconds
-  unsigned long timestamp = millis();
+  // Check for Serial commands to start/stop recording or label actions
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
 
-  // Read the sensor value
-  float reading = analogRead(STRETCHPIN);
+    if (command == "start") {
+      recording = true;
+      startTime = millis();      // Reset timestamp at start
+      Serial.println("Recording started...");
+    } 
+    else if (command == "stop") {
+      recording = false;
+      Serial.println("Recording stopped.");
+    } 
+    else if (recording) {
+      // Assign new label while recording
+      currentLabel = command;
+      Serial.print("Label set to: ");
+      Serial.println(currentLabel);
+    }
+  }
 
-  // Convert to resistance
-  reading = (4095.0 / reading) - 1;         // (4095/ADC - 1) 
-  reading = SERIESRESISTOR / reading;        // 10K / (4095/ADC - 1)
+  if (recording) {
+    // Read the resistance data
+    float reading = analogRead(STRETCHPIN);
 
-  // Print timestamp + resistance value
-  Serial.print(timestamp);
-  Serial.print(", ");
-  Serial.println(reading);
+    // Convert ADC reading to resistance
+    reading = (4095.0 / reading) - 1;         // (4095 / ADC - 1)
+    reading = SERIESRESISTOR / reading;       // 10K / (4095 / ADC - 1)
 
-  delay(10);   // Reduce delay for more frequent samples
+    // Create timestamp in milliseconds
+    unsigned long currentTime = millis() - startTime;
+
+    // Print in CSV format
+    Serial.print(currentTime);
+    Serial.print(",");
+    Serial.print(reading, 2);   // Print resistance with 2 decimal places
+    Serial.print(",");
+    Serial.println(currentLabel);
+
+    // Delay for stability (adjust as needed)
+    delay(100);
+  }
 }
